@@ -1,0 +1,15 @@
+&&&&&&SAMPLE PAPER 2&&&&&&&&&&
+
+
+(a)--> select empname,saralry,city from club where salary between 4000 and 8000;
+
+(b)--> update EMP set salary=salary+500 where gender like '%e';
+
+(c)--> select empcode, empname where empname like '%_a';
+
+(d)-->  EMPNAME		SALARY
+	subhash das	3600
+	mahesh patel	6500
+
+(e)--> sum(salary)		max(salary)
+	15900			9600
