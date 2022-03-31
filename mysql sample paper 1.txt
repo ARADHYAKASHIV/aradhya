@@ -5,7 +5,7 @@
 
 (b)--> select max(pay) as maxpay, min(pay) as minpay, sports from club group by sports;
 
-(c)--> nahi ban rha
+(c)--> select * from club where coach_name like "%e%";
 
 
 (d)--> coachname	sports
