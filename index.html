@@ -1,59 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Love Page</title>
-    <style>
-        body {
-            background-color: #f8f8f8;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        
-        h1 {
-            color: #e53935;
-        }
-        
-        #message-box {
-            width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            margin-top: 50px;
-        }
-        
-        #message-input {
-            width: 100%;
-            height: 200px;
-            resize: none;
-            margin-top: 10px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        
-        #submit-button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #e53935;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-    </style>
+  <title>Photo Slider with Message Corner</title>
+  <style>
+    /* CSS for the photo slider */
+    .slider {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+    
+    .slider img {
+      width: 100%;
+      height: auto;
+    }
+    
+    /* CSS for the message corner */
+    .message-corner {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #f2f2f2;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .message-input {
+      width: 200px;
+      height: 60px;
+      resize: none;
+    }
+    
+    .message-button {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Share Your Love Message</h1>
-    <div id="message-box">
-        <form>
-            <textarea id="message-input" placeholder="Write your message here..."></textarea>
-            <br>
-            <button id="submit-button" type="submit">Submit</button>
-        </form>
-    </div>
+  <!-- HTML structure for the photo slider -->
+  <div class="slider">
+    <img src="photo1.jpg" alt="Photo 1">
+    <img src="photo2.jpg" alt="Photo 2">
+    <img src="photo3.jpg" alt="Photo 3">
+    <!-- Add more images here -->
+  </div>
+
+  <!-- HTML structure for the message corner -->
+  <div class="message-corner">
+    <textarea class="message-input" placeholder="Write a message"></textarea>
+    <button class="message-button">Send</button>
+  </div>
+
+  <!-- JavaScript code to handle the photo slider (using jQuery) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.slider').slick({
+        // Configure the photo slider options here
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: true
+        // Add more options if needed
+      });
+    });
+  </script>
 </body>
 </html>
