@@ -27,9 +27,9 @@ nav {
   font-family: "Tilt Neon", sans-serif;
 }
 
-.left{
-    font-family: Nabla;
-    font-size: 2.5rem;
+.left {
+  /* font-family: "Tilt Neon", sans-serif; */
+  font-size: 2rem;
 }
 
 nav ul {
@@ -39,24 +39,24 @@ nav ul {
 
 nav ul li {
   list-style: none;
-  font-family: Playpen Sans;
+  /* font-family: "Tilt Neon", sans-serif; */
   margin: 0 20px;
 }
 
 nav ul li {
   display: inline-block;
-  font-family: Playpen Sans;
+  /* font-family: "Tilt Neon", sans-serif; */
   position: relative;
   color: white;
 }
 
-nav ul li:hover{
-    transition: ease-in-out 0.2s;
-    color: white;
-    transform: scale(1.2);
-    /* text-decoration: underline; */
-    text-underline-offset: 3px;
-    
+nav ul li:hover {
+  transition: ease-in-out 0.2s;
+  color: white;
+  transform: scale(1.2);
+  /* text-decoration: underline; */
+  text-underline-offset: 3px;
+
 }
 
 nav ul li:hover::after {
@@ -72,5 +72,29 @@ nav ul li:hover::after {
 
 a {
   text-decoration: none;
-  color:white;
+  color: white;
+}
+
+/* main section div and image */
+
+.firstSec{
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.firstSec div{
+  width: 30%;
+}
+
+.leftSec{
+  font-size: 3rem;
+  margin-top: 30px;
+
+}
+
+.rightSec img{
+  width: 100%;
+  margin-top: 9px;
+  
 }
