@@ -12,9 +12,10 @@
 
 body {
   background-color: rgb(1, 0, 33);
-  color: whitesmoke;
+  color: white;
 }
 
+/* NavBar */
 nav {
   display: flex;
   justify-content: space-between;
@@ -28,7 +29,7 @@ nav {
 
 .left{
     font-family: Nabla;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
 }
 
 nav ul {
@@ -39,11 +40,12 @@ nav ul {
 nav ul li {
   list-style: none;
   font-family: Playpen Sans;
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li {
   display: inline-block;
+  font-family: Playpen Sans;
   position: relative;
   color: white;
 }
