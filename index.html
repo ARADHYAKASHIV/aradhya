@@ -2,161 +2,162 @@
 <html>
 
 <head>
-    <!-- Title of the webpage -->
-    <title>Aradhya's Portfolio</title>
-    <!-- Character encoding for the HTML document -->
-    <meta charset="UTF-8">
-    <!-- Setting the viewport to make the website look good on all devices -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Linking the CSS stylesheet -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Title of the webpage -->
+  <title>Aradhya's Portfolio</title>
+  <!-- Character encoding for the HTML document -->
+  <meta charset="UTF-8">
+  <!-- Setting the viewport to make the website look good on all devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Linking the CSS stylesheet -->
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
 
 
 <body>
-    <script src="script.js"></script>
-    <header>
-        <!-- Navigation bar -->
-        <nav>
-            <!-- Logo on the left side of the navbar -->
-            <div class="left"><img src="img/logo_navbar.png" alt="" srcset=""></div>
-            <!-- Navigation links on the right side of the navbar -->
-            <div class="right">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Services</a></li>
-                    <li><a href="/">Projects</a></li>
-                    <li><a href="/">Contact Me</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <!-- Main body of the webpage -->
-        <section class="firstSec">
-            <!-- Left section of the main body -->
-            <div class="leftSec">
-                <!-- Introduction text -->
-                Hi, I am Aradhya
-                <br>
-                <div>I am a <span class="messenger"></span></div>
-                
-            </div>
-            <!-- Right section of the main body -->
-            <div class="rightSec">
-                <!-- Lottie animation player with settings -->
-                <dotlottie-player src="https://lottie.host/2db2b5de-88ce-4b2a-8472-c46f750eb2ff/mdrMbEcigj.json"
-                    background="transparent" speed="1" style="width: 300px; height: 300px;" loop
-                    autoplay></dotlottie-player>
-            </div>
-        </section>
-    </main>
-    <!-- Importing the Lottie player component script -->
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-    <script>
-        var Messenger = function(el){
-  'use strict';
-  var m = this;
-  
-  m.init = function(){
-    m.codeletters = "abcdefghijklmnopqrstuvwxzy&#*+%?£@§$";
-    m.message = 0;
-    m.current_length = 0;
-    m.fadeBuffer = false;
-    m.messages = [
-      'Web Developer',
-        'UI/UX Designer',
-        'Graphic Designer',
-        'Photographer',
-        'Video Editor',
-        'Content Creator',
-        'Student',
-        'Learner',
-        'Tech Enthusiast',
-    ];
-    
-    setTimeout(m.animateIn, 100);
-  };
-  
-  m.generateRandomString = function(length){
-    var random_text = '';
-    while(random_text.length < length){
-      random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
-    } 
-    
-    return random_text;
-  };
-  
-  m.animateIn = function(){
-    if(m.current_length < m.messages[m.message].length){
-      m.current_length = m.current_length + 2;
-      if(m.current_length > m.messages[m.message].length) {
-        m.current_length = m.messages[m.message].length;
-      }
-      
-      var message = m.generateRandomString(m.current_length);
-      document.querySelector(el).innerHTML = message;
-      
-      setTimeout(m.animateIn, 20);
-    } else { 
-      setTimeout(m.animateFadeBuffer, 30);
-    }
-  };
-  
-  m.animateFadeBuffer = function(){
-    if(m.fadeBuffer === false){
-      m.fadeBuffer = [];
-      for(var i = 0; i < m.messages[m.message].length; i++){
-        m.fadeBuffer.push({c: (Math.floor(Math.random()*12))+1, l: m.messages[m.message].charAt(i)});
-      }
-    }
-    
-    var do_cycles = false;
-    var message = ''; 
-    
-    for(var i = 0; i < m.fadeBuffer.length; i++){
-      var fader = m.fadeBuffer[i];
-      if(fader.c > 0){
-        do_cycles = true;
-        fader.c--;
-        message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
-      } else {
-        message += fader.l;
-      }
-    }
-    
-    document.querySelector(el).innerHTML = message;
-    
-    if(do_cycles === true){
-      setTimeout(m.animateFadeBuffer, 50);
-    } else {
-      setTimeout(m.cycleText, 2000);
-    }
-  };
-  
-  m.cycleText = function(){
-    m.message = m.message + 1;
-    if(m.message >= m.messages.length){
-      m.message = 0;
-    }
-    
-    m.current_length = 0;
-    m.fadeBuffer = false;
-    document.querySelector(el).innerHTML = '';
-    
-    setTimeout(m.animateIn, 500);
-  };
-  
-  m.init();
-}
+  <script src="script.js"></script>
+  <header>
+    <!-- Navigation bar -->
+    <nav>
+      <!-- Logo on the left side of the navbar -->
+      <div class="left"><img src="img/logo_navbar.png" alt="" srcset=""></div>
+      <!-- Navigation links on the right side of the navbar -->
+      <div class="right">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Services</a></li>
+          <li><a href="/">Projects</a></li>
+          <li><a href="/">Contact Me</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <!-- Main body of the webpage -->
+    <section class="firstSec">
+      <!-- Left section of the main body -->
+      <div class="leftSec">
+        <!-- Introduction text -->
+        Hi, I am Aradhya
+        <br>
+        <div>I'm a <span class="messenger"></span></div>
 
-console.clear();
-var messenger = new Messenger('.messenger');
-    </script>
+      </div>
+      <!-- Right section of the main body -->
+      <div class="rightSec">
+        <!-- Lottie animation player with settings -->
+        <dotlottie-player src="https://lottie.host/cdd58b15-8302-4866-b3ab-32aa02f040b4/gO0TLZk3bX.json" background="transparent" speed="0.85" style="width: 500px; height: 400px;" loop autoplay></dotlottie-player>
+      </div>
+    </section>
+  </main>
+  <!-- Importing the Lottie player component script -->
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+  <script>
+    var Messenger = function (el) {
+      'use strict';
+      var m = this;
+
+      m.init = function () {
+        m.codeletters = "as&#%?£@§$&#*+%?£@§$";
+        m.message = 0;
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        m.messages = [
+          'Web Developer',
+          'UI/UX Designer',
+          'Graphic Designer',
+          'Photographer',
+          'Video Editor',
+          'Content Creator',
+          'Student',
+          'Learner',
+        ];
+
+        setTimeout(m.animateIn, 200);
+      };
+
+      m.generateRandomString = function (length) {
+        var random_text = '';
+        while (random_text.length < length) {
+          random_text += m.codeletters.charAt(Math.floor(Math.random() * m.codeletters.length));
+        }
+
+        return random_text;
+      };
+
+      m.animateIn = function () {
+        if (m.current_length < m.messages[m.message].length) {
+          m.current_length = m.current_length + 2;
+          if (m.current_length > m.messages[m.message].length) {
+            m.current_length = m.messages[m.message].length;
+          }
+
+          var message = m.generateRandomString(m.current_length);
+          document.querySelector(el).innerHTML = message;
+
+          setTimeout(m.animateIn, 40);
+        } else {
+          setTimeout(m.animateFadeBuffer, 60);
+        }
+      };
+
+      m.animateFadeBuffer = function () {
+        if (m.fadeBuffer === false) {
+          m.fadeBuffer = [];
+          for (var i = 0; i < m.messages[m.message].length; i++) {
+            m.fadeBuffer.push({ c: (Math.floor(Math.random() * 12)) + 1, l: m.messages[m.message].charAt(i) });
+          }
+        }
+
+        var do_cycles = false;
+        var message = '';
+
+        for (var i = 0; i < m.fadeBuffer.length; i++) {
+          var fader = m.fadeBuffer[i];
+          if (fader.c > 0) {
+            do_cycles = true;
+            fader.c--;
+            message += m.codeletters.charAt(Math.floor(Math.random() * m.codeletters.length));
+          } else {
+            message += fader.l;
+          }
+        }
+
+        document.querySelector(el).innerHTML = message;
+
+        if (do_cycles === true) {
+          setTimeout(m.animateFadeBuffer, 50);
+        } else {
+          setTimeout(m.cycleText, 3000);
+        }
+      };
+
+      m.cycleText = function () {
+        m.message = m.message + 1;
+        if (m.message >= m.messages.length) {
+          m.message = 0;
+        }
+
+        m.current_length = 0;
+        m.fadeBuffer = false;
+        document.querySelector(el).innerHTML = '';
+
+        setTimeout(m.animateIn, 200);
+      };
+
+      m.init();
+    }
+
+    console.clear();
+    var messenger = new Messenger('.messenger');
+  </script>
 
 </body>
+
+
+
+    
 
 </html>
