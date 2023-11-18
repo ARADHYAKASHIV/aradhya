@@ -19,23 +19,47 @@ body {
 
 /* NavBar */
 nav {
+  /* Makes the nav a flex container, which allows for flexible layout */
   display: flex;
+
+  /* Distributes space between and around items along the horizontal axis */
   justify-content: space-between;
+
+  /* Adds padding to the left and right of the nav */
   padding-left: 100px;
   padding-right: 50px;
+
+  /* Aligns items along the vertical axis in the center */
   align-items: center;
+
+  /* Sets the height of the nav */
   height: 99px;
-  background-color: rgb(2, 2, 49)
+
+  /* Sets the background color of the nav */
+  background-color: rgb(2, 2, 49);
+
+  /* Sets the font of the text within the nav */
   font-family: "Tilt Neon", sans-serif;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));/*explains the shadow around the navbar*/
+
+  /* Adds a shadow effect to the nav */
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  /* Sets the background color of the nav with transparency */
   background: rgba(2, 2, 49, 0.8);
+
+  /* Applies a blur effect to the area behind the nav */
   backdrop-filter: blur(9px);
-  position:sticky;
-  position:fixed;
-  top:0;
+
+  /* Makes the nav stick to the top of the viewport */
+  position: sticky;
+  position: fixed;
+  top: 0;
+
+  /* Sets the stack order of the nav */
   z-index: 1;
+
+  /* Sets the width of the nav */
   width: 100%;
-  
 }
 
 .left img {
@@ -87,7 +111,7 @@ nav ul li:hover::after {
 }
 
 nav ul li a:hover{
-  color: rgb(163, 163, 229);
+  color: rgb(80, 80, 136);
 }
 
 a {
@@ -115,14 +139,27 @@ a {
   font-weight: 600;
   color: rgb(163, 163, 229);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+
+}
+
+.messenger{
+  font-size: 2.5rem;
+  font-family: jetbrains mono;
+  font-weight: 600;
+  color: rgb(163, 163, 229);
+  text-shadow: 0px 4px 4px rgb(16, 16, 16);
+  word-wrap:
+  
 }
 
 .rightSec img{
   width: 140%;
   margin-top: 47px;
+  position: fixed;
   
 }
 
-@media (min-width: 640px) { body {font-size:1rem;} }
+/* @media (min-width: 640px) { body {font-size:1rem;} }
 @media (min-width:960px) { body {font-size:1.2rem;} }
-@media (min-width:1100px) { body {font-size:1.5rem;} }
+@media (min-width:1100px) { body {font-size:1.5rem;} } */

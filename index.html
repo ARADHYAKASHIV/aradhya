@@ -10,13 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Linking the CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <!-- Linking the JavaScript file -->
-    <link rel="script" href="script.js">
+
 </head>
 
 
 
 <body>
+    <script src="script.js"></script>
     <header>
         <!-- Navigation bar -->
         <nav>
@@ -38,12 +38,12 @@
         <!-- Main body of the webpage -->
         <section class="firstSec">
             <!-- Left section of the main body -->
-            <div class="leftSec" id="movingText">
+            <div class="leftSec">
                 <!-- Introduction text -->
                 Hi, I am Aradhya
                 <br>
-                <div>I am a persuing</div>
-                <div><span>Web Developer</span></div>
+                <div>I am a <span class="messenger"></span></div>
+                
             </div>
             <!-- Right section of the main body -->
             <div class="rightSec">
@@ -56,6 +56,107 @@
     </main>
     <!-- Importing the Lottie player component script -->
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <script>
+        var Messenger = function(el){
+  'use strict';
+  var m = this;
+  
+  m.init = function(){
+    m.codeletters = "abcdefghijklmnopqrstuvwxzy&#*+%?£@§$";
+    m.message = 0;
+    m.current_length = 0;
+    m.fadeBuffer = false;
+    m.messages = [
+      'Web Developer',
+        'UI/UX Designer',
+        'Graphic Designer',
+        'Photographer',
+        'Video Editor',
+        'Content Creator',
+        'Student',
+        'Learner',
+        'Tech Enthusiast',
+    ];
+    
+    setTimeout(m.animateIn, 100);
+  };
+  
+  m.generateRandomString = function(length){
+    var random_text = '';
+    while(random_text.length < length){
+      random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+    } 
+    
+    return random_text;
+  };
+  
+  m.animateIn = function(){
+    if(m.current_length < m.messages[m.message].length){
+      m.current_length = m.current_length + 2;
+      if(m.current_length > m.messages[m.message].length) {
+        m.current_length = m.messages[m.message].length;
+      }
+      
+      var message = m.generateRandomString(m.current_length);
+      document.querySelector(el).innerHTML = message;
+      
+      setTimeout(m.animateIn, 20);
+    } else { 
+      setTimeout(m.animateFadeBuffer, 30);
+    }
+  };
+  
+  m.animateFadeBuffer = function(){
+    if(m.fadeBuffer === false){
+      m.fadeBuffer = [];
+      for(var i = 0; i < m.messages[m.message].length; i++){
+        m.fadeBuffer.push({c: (Math.floor(Math.random()*12))+1, l: m.messages[m.message].charAt(i)});
+      }
+    }
+    
+    var do_cycles = false;
+    var message = ''; 
+    
+    for(var i = 0; i < m.fadeBuffer.length; i++){
+      var fader = m.fadeBuffer[i];
+      if(fader.c > 0){
+        do_cycles = true;
+        fader.c--;
+        message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
+      } else {
+        message += fader.l;
+      }
+    }
+    
+    document.querySelector(el).innerHTML = message;
+    
+    if(do_cycles === true){
+      setTimeout(m.animateFadeBuffer, 50);
+    } else {
+      setTimeout(m.cycleText, 2000);
+    }
+  };
+  
+  m.cycleText = function(){
+    m.message = m.message + 1;
+    if(m.message >= m.messages.length){
+      m.message = 0;
+    }
+    
+    m.current_length = 0;
+    m.fadeBuffer = false;
+    document.querySelector(el).innerHTML = '';
+    
+    setTimeout(m.animateIn, 500);
+  };
+  
+  m.init();
+}
+
+console.clear();
+var messenger = new Messenger('.messenger');
+    </script>
+
 </body>
 
 </html>
