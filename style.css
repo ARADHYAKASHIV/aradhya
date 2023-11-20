@@ -165,6 +165,78 @@ a {
 
 }
 
+  .dud {
+    color: rgb(163, 163, 229); /* Change the color of the scrambling characters to green */
+  }
+
+  .dud:after {
+    content: attr(data-letters); /* Set the content of the pseudo element to the data-letters attribute */
+    position: absolute; /* Position the pseudo element */
+    left: 0; /* Set the left property to 0 */
+    text-shadow: -1px 0 rgb(163, 163, 229); /* Give the text a shadow effect */
+    overflow: hidden; /* Hide text that overflows the element */
+    animation: scramble 0.5s linear infinite; /* Create a scrambling effect using keyframes */
+  } 
+
+
+
+/* MEDIA QUERIES */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .messenger {
+    font-size: 2.5rem;
+  }
+  .rightSec img {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px to 900px) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .messenger {
+    font-size: 2.5rem;
+  }
+  .rightSec img {
+    width: 120%;
+    margin-left: 20px;
+  }
+}
+
+/* Medium devices (landscape tablets, 901px to 1200px) */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .messenger {
+    font-size: 2.5rem;
+  }
+  .rightSec img {
+    width: 140%;
+    margin-left: 40px;
+  }
+}
+
+/* Large devices (laptops/desktops, 1201px and up) */
+@media only screen and (min-width: 1201px) {
+  .messenger {
+    font-size: 2.5rem;
+  }
+  .rightSec img {
+    width: 160%;
+    margin-left: 60px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .messenger {
+    font-size: 3rem;
+  }
+  .rightSec img {
+    width: 160%;
+    margin-left: 100px;
+  }
+}
+
 /* @media (min-width: 640px) { body {font-size:1rem;} }
 @media (min-width:960px) { body {font-size:1.2rem;} }
 @media (min-width:1100px) { body {font-size:1.5rem;} } */
