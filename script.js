@@ -1,93 +1,82 @@
-var Messenger = function(el){
-    'use strict';
-    var m = this;
-    
-    m.init = function(){
-        m.codeletters = "&#*+%?£@§$";
-        m.message = 0;
-        m.current_length = 0;
-        m.fadeBuffer = false;
-        m.messages = [
-            'This is a message, which can be long and all.',
-            'This could be another message.',
-            'Also short ones work!',
-            'Cool.'
-        ];
-        
-        setTimeout(m.animateIn, 100);
-    };
-    
-    m.generateRandomString = function(length){
-        var random_text = '';
-        while(random_text.length < length){
-            random_text += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
-        } 
-        
-        return random_text;
-    };
-    
-    m.animateIn = function(){
-        if(m.current_length < m.messages[m.message].length){
-            m.current_length = m.current_length + 2;
-            if(m.current_length > m.messages[m.message].length) {
-                m.current_length = m.messages[m.message].length;
-            }
-            
-            var message = m.generateRandomString(m.current_length);
-            document.getElementById(el).innerHTML = message;
-            
-            setTimeout(m.animateIn, 20);
-        } else { 
-            setTimeout(m.animateFadeBuffer, 20);
-        }
-    };
-    
-    m.animateFadeBuffer = function(){
-        if(m.fadeBuffer === false){
-            m.fadeBuffer = [];
-            for(var i = 0; i < m.messages[m.message].length; i++){
-                m.fadeBuffer.push({c: (Math.floor(Math.random()*12))+1, l: m.messages[m.message].charAt(i)});
-            }
-        }
-        
-        var do_cycles = false;
-        var message = ''; 
-        
-        for(var i = 0; i < m.fadeBuffer.length; i++){
-            var fader = m.fadeBuffer[i];
-            if(fader.c > 0){
-                do_cycles = true;
-                fader.c--;
-                message += m.codeletters.charAt(Math.floor(Math.random()*m.codeletters.length));
-            } else {
-                message += fader.l;
-            }
-        }
-        
-        document.getElementById(el).innerHTML = message;
-        
-        if(do_cycles === true){
-            setTimeout(m.animateFadeBuffer, 50);
+class TextScramble {
+    constructor(el) {
+      this.el = el;
+      this.chars = '▓!@#$%&~░░▲▼';
+      this.update = this.update.bind(this);
+    }
+    setText(newText) {
+      const oldText = this.el.innerText;
+      const length = Math.max(oldText.length, newText.length);
+      const promise = new Promise((resolve) => (this.resolve = resolve));
+      this.queue = [];
+      for (let i = 0; i < length; i++) {
+        const from = oldText[i] || '';
+        const to = newText[i] || '';
+        const start = Math.floor(Math.random() * 60);
+        const end = start + Math.floor(Math.random() * 60);
+        this.queue.push({ from, to, start, end });
+      }
+      cancelAnimationFrame(this.frameRequest);
+      this.frame = 0;
+      this.update();
+      return promise;
+    }
+    update() {
+      let output = '';
+      let complete = 0;
+      for (let i = 0, n = this.queue.length; i < n; i++) {
+        let { from, to, start, end, char } = this.queue[i];
+        if (this.frame >= end) {
+          complete++;
+          output += to;
+        } else if (this.frame >= start) {
+          if (!char || Math.random() < 0.28) {
+            char = this.randomChar();
+            this.queue[i].char = char;
+          }
+          output += `<span class="dud">${char}</span>`;
         } else {
-            setTimeout(m.cycleText, 2000);
+          output += from;
         }
-    };
-    
-    m.cycleText = function(){
-        m.message = m.message + 1;
-        if(m.message >= m.messages.length){
-            m.message = 0;
-        }
-        
-        m.current_length = 0;
-        m.fadeBuffer = false;
-        document.getElementById(el).innerHTML = '';
-        
-        setTimeout(m.animateIn, 200);
-    };
-    
-    m.init();
-}
+      }
+      this.el.innerHTML = output;
+      if (complete === this.queue.length) {
+        this.resolve();
+      } else {
+        this.frameRequest = requestAnimationFrame(this.update);
+        this.frame++;
+      }
+    }
+    randomChar() {
+      return this.chars[Math.floor(Math.random() * this.chars.length)];
+    }
+  }
 
-console.clear();
-var messenger = new Messenger('#messenger');
+  // An example on how to use it:
+  const phrases = [
+  'Web Developer',
+        // 'UI/UX Designer',
+        'Photographer',
+        'Video Editor',
+        'Content Writer',
+        'Student',
+        'Learner',
+        'Musician',
+        'Programmer',
+        'Coder',
+        'Tech Geek',
+
+  ];
+
+  const el = document.querySelector('.messenger');
+  const fx = new TextScramble(el);
+
+  let counter = 0;
+  const next = () => {
+    fx.setText(phrases[counter]).then(() => {
+      setTimeout(next, 2000);
+    });
+    counter = (counter + 1) % phrases.length;
+  };
+
+  next();

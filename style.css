@@ -17,6 +17,25 @@ body {
   height: 100rem;
 }
 
+.container {
+  position: relative;
+}
+
+.bg{
+  background-image: url(img/bg.png);
+  position: absolute;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  top: 0px;
+  left: 0px;
+  opacity: 0.8;
+
+}
+
 /* NavBar */
 nav {
   /* Makes the nav a flex container, which allows for flexible layout */
@@ -36,7 +55,7 @@ nav {
   height: 99px;
 
   /* Sets the background color of the nav */
-  background-color: rgb(2, 2, 49);
+  background-color:rgb(65, 90, 119);
 
   /* Sets the font of the text within the nav */
   font-family: "Tilt Neon", sans-serif;
@@ -45,10 +64,10 @@ nav {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
   /* Sets the background color of the nav with transparency */
-  background: rgba(2, 2, 49, 0.8);
+  background: rgb(18, 16, 30 , 0.8);
 
   /* Applies a blur effect to the area behind the nav */
-  backdrop-filter: blur(9px);
+  backdrop-filter: blur(4px);
 
   /* Makes the nav stick to the top of the viewport */
   position: sticky;
@@ -93,7 +112,7 @@ nav ul li {
 nav ul li:hover {
   transition: ease-in-out 0.2s;
   
-  transform: scale(1.2);
+  transform: scale(1.1);
   /* text-decoration: underline; */
   text-underline-offset: 3px;
 
@@ -111,7 +130,7 @@ nav ul li:hover::after {
 }
 
 nav ul li a:hover{
-  color: rgb(80, 80, 136);
+  color: rgb(163, 163, 229);
 }
 
 a {
@@ -138,7 +157,7 @@ a {
   /* margin-top: 2%; */
   font-family: jetbrains mono;
   font-weight: 600;
-  color: rgb(163, 163, 229);
+  color: rgb(255, 255, 255);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   justify-content: flex-start;
   margin-right: 100px;
