@@ -229,7 +229,7 @@ a {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .messenger {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .rightSec img {
     width: 160%;
