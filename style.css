@@ -37,7 +37,8 @@ body {
   background-position: center;
   top: 0px;
   left: 0px;
-  opacity: 0.8;
+  /* filter:contrast(1.2); */
+  /* opacity: 0.8; */
 
 }
 
@@ -194,18 +195,31 @@ a {
   
 }
 
+
+.name {
+  /* ...existing styles... */
+  background: linear-gradient(to right,rgb(48, 91, 255) 3%, rgb(153, 125, 255));
+  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+  
+  font-size: 3rem;
+}
+
+
 .messenger{
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-family: jetbrains mono;
   font-weight: 600;
   /* color: rgb(89, 24, 223); */
-  color: rgb(48, 91, 255);
-  text-shadow: 0px 4px 4px rgb(16, 16, 16);
+  color: rgb(255, 255, 255);
+  text-shadow: 4px 4px 4px rgb(48, 91, 255);
 
 }
 
   .dud {
-    color: lavender; /* Change the color of the scrambling characters to green */
+    color: rgb(255, 255, 255); /* Change the color of the scrambling characters to green */
   }
 
   .dud:after {
