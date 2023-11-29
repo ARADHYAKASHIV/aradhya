@@ -12,22 +12,24 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important ;
 }
 
 body {
   background-color: rgb(15, 13, 22);
   color: white;
   height: 100rem;
-  /* padding-top: 150px; */
+  width: 100%;
 }
 
 .container {
   position: relative;
+  /* margin-top: 100px; */
 }
 
 .bg{
   background-image: url(img/bg.png);
+  filter: brightness(130%);
   position: absolute;
   z-index: -999;
   width: 100%;
@@ -198,13 +200,32 @@ a {
 
 .name {
   /* ...existing styles... */
-  background: linear-gradient(to right,rgb(48, 91, 255) 3%, rgb(153, 125, 255));
-  
+  background: linear-gradient(270deg, rgb(48, 91, 255), rgb(153, 125, 255));
+  background-size: 200% 200%;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bolder;
-  
   font-size: 3rem;
+  animation: Gradient 2s ease infinite;
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 
