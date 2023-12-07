@@ -60,7 +60,7 @@ nav {
   align-items: center;
 
   /* Sets the height of the nav */
-  height: 99px;
+  height: 85px;
 
   /* Sets the background color of the nav */
   background-color: rgb(65, 90, 119);
@@ -200,6 +200,7 @@ a {
 .skills {
   height: 75%;
   width: 75%;
+  margin-top: 90px;
   animation: slideIn 2s ease-in-out forwards, rotate 0.5s ease-in-out 2s 1;
 }
 
@@ -251,14 +252,14 @@ a {
 
 .name {
   /* ...existing styles... */
-  background: linear-gradient(270deg, rgb(48, 91, 255), rgb(153, 125, 255));
+  background: linear-gradient(270deg, rgb(48, 91, 255),rgb(94, 102, 243), rgb(140, 114, 231));
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bolder;
   font-size: 3rem;
-  animation: Gradient 2s ease infinite;
+  animation: Gradient 5s ease-in-out infinite;
 }
 
 
@@ -427,11 +428,6 @@ a {
 
 
 
-@media (min-width:2100px) {
-  .shapedividers_com-7518::before {
-    background-size: 100% calc(2vw + 40px);
-  }
-}
 
 /* MEDIA QUERIES */
 
@@ -446,6 +442,13 @@ a {
   }
 } */
 
+/* @media (min-width:2100px) {
+  .shapedividers_com-7518::before {
+    background-size: 100% calc(2vw + 40px);
+  }
+} */
+
+
 /* Small devices (portrait tablets and large phones, 600px to 900px) */
 /* @media only screen and (min-width: 601px) and (max-width: 900px) {
   .messenger {
@@ -456,6 +459,7 @@ a {
     margin-left: 20px;
   }
 } */
+
 
 /* Medium devices (landscape tablets, 901px to 1200px) */
 /* @media only screen and (min-width: 901px) and (max-width: 1200px) {
@@ -477,7 +481,8 @@ a {
     width: 160%;
     margin-left: 60px;
   }
-} */
+} 
+*/
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* @media (min-width: 1200px) {
@@ -489,6 +494,7 @@ a {
     margin-left: 100px;
   }
 } */
+
 
 /* @media (min-width: 640px) { body {font-size:1rem;} }
 @media (min-width:960px) { body {font-size:1.2rem;} }
