@@ -19,7 +19,7 @@ body {
   background-color: rgb(15, 13, 22);
   color: white;
   height: 100vw;
-  width: 100vw;
+  width: 100%;
 }
 
 .container {
@@ -75,7 +75,7 @@ nav {
   background: rgb(18, 16, 30, 0.8);
 
   /* Applies a blur effect to the area behind the nav */
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
 
   /* Makes the nav stick to the top of the viewport */
   position: sticky;
@@ -115,6 +115,7 @@ nav ul li {
   position: relative;
   color: white;
   font-size: 1.12rem;
+  
 }
 
 nav ul li:hover {
@@ -167,7 +168,7 @@ a {
 } */
 
 .firstSec>div {
-  width: 100%;
+  width: 100vw;
 }
 
 .leftSec {
@@ -207,6 +208,7 @@ a {
 }
 
 .skillsdiv {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,7 +235,7 @@ a {
   position: absolute;
   top: 999;
   left: 0;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   line-height: 0;
   margin-top: -132px;
