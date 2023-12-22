@@ -448,8 +448,27 @@ a {
 /* MEDIA QUERIES */
 
 
-@media (max-width: 480px) {
-  /* CSS rules for smartphones */
+/* @media (max-width: 480px) {
+  .firstSec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 100px;
+  }
+
+  .leftSec {
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .rightSec img {
+    width: 100%;
+    margin-left: 0;
+  }
 
   body {
     background-color: rgb(15, 13, 22);
@@ -460,23 +479,23 @@ a {
 
   .container {
     position: relative;
-    width: 90%; /* Reduce width to create some space around the content */
-    margin: 0 auto; /* Center the content */
+    width: 90%; 
+    margin: 0 auto; 
   }
 
   .bg {
-    background-image: url(img/bg.png); /* Use a smaller background image for smartphones */
+    background-image: url(img/bg.png);
     filter: brightness(130%);
     position: absolute;
     z-index: -999;
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: cover; /* Make sure the background image covers the whole element */
+    background-size: cover; 
   }
 
   nav {
-    /* Existing CSS */
+   
     display: flex;
     justify-content: space-between;
     padding-left: 100px;
@@ -489,24 +508,24 @@ a {
     background: rgb(18, 16, 30, 0.8);
     backdrop-filter: blur(8px);
   
-    /* New CSS */
-    position: fixed; /* Makes the nav bar fixed at the top */
-    width: 100%; /* Ensures the nav bar spans the full width of the viewport */
-    z-index: 1000; /* Ensures the nav bar is always on top of other elements */
-    color: #ffffff; /* Sets the color of the text within the nav */
+    
+    position: fixed; 
+    width: 100%; 
+    z-index: 1000; 
+    color: #ffffff; 
   }
   
   nav a {
-    color: #ffffff; /* Sets the color of links within the nav */
-    text-decoration: none; /* Removes the underline from links */
+    color: #ffffff; 
+    text-decoration: none; 
   }
   
   nav a:hover {
-    color: #cccccc; /* Changes the color of links when hovered over */
+    color: #cccccc; 
   }
 
-  /* Add more CSS rules as needed */
-}
+  
+} */
 
 /* NavBar */
 
