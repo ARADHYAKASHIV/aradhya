@@ -5,24 +5,22 @@
   <!-- Title of the webpage -->
   <title>Aradhya's Portfolio</title>
   <!-- Character encoding for the HTML document -->
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <!-- Setting the viewport to make the website look good on all devices -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Linking the CSS stylesheet -->
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-
-
 <body>
-
   <!-- <script src="script.js"></script> -->
   <header>
     <!-- Navigation bar -->
     <nav>
       <!-- Logo on the left side of the navbar -->
-      <div class="left"><a href="#"><img src="img/logo_navbar.png" alt="" srcset=""></a></div>
+      <div class="left">
+        <a href="#"><img src="img/logo_navbar.png" alt="" srcset="" /></a>
+      </div>
       <!-- Navigation links on the right side of the navbar -->
       <div class="right">
         <ul>
@@ -43,15 +41,14 @@
       <div class="leftSec">
         <!-- Introduction text -->
         Hi, I am <span class="name">Aradhya Kashiv</span>
-        <br>
+        <br />
         <div>I'm a <span class="messenger"></span></div>
-
       </div>
       <!-- Right section of the main body -->
       <div class="rightSec">
         <!-- Lottie animation player with settings -->
         <dotlottie-player src="https://lottie.host/cdd58b15-8302-4866-b3ab-32aa02f040b4/gO0TLZk3bX.json"
-          background="transparent" speed="0.85" style="width: 500px; height: 400px;" loop autoplay></dotlottie-player>
+          background="transparent" speed="0.85" style="width: 500px; height: 400px" loop autoplay></dotlottie-player>
       </div>
 
     </section>
@@ -69,10 +66,24 @@
           class="shape-fill"></path>
       </svg>
     </div>
+
+
+
+    <!-- *****************SKILLS/ABOUT***************** -->
     <div class="skillsdiv" id="skills">
-      <p>Skills</p><img class="skills" src="img/skills.png" alt="" srcset="">
+      <div class="skillstxt">
+        Class <span style="color: #F9F871;">aradhya Kashiv</span>{
+        <br>
+        <span style="color: #2BD870;"><br>constructor() {</span>
+          <br>
+          this.name = <span style="color: #F9F871;">"aradhya Kashiv";</span><br>
+          this.dayOfBirthTimeStamp = <span style="color:rgb(34, 217, 54);">612230400;</span><br>
+          this.email = <span style="color:rgb(34, 217, 54);">kashiv.aradhya@gmail.com;</span><br>
+          
+      </div>
     </div>
   </main>
+
   <!-- Importing the Lottie player component script -->
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
   <script>

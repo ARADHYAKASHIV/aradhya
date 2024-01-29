@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Tilt+Neon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300&family=Press+Start+2P&family=Tilt+Neon&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&family=Playpen+Sans:wght@300&family=Press+Start+2P&family=Quicksand&family=Tilt+Neon&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Special+Elite&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +24,8 @@ body {
 
 .container {
   position: relative;
-  /* margin-top: 100px; */
+  margin-top: 100px;
+  width: 100%;
 }
 
 .bg {
@@ -32,7 +33,7 @@ body {
   filter: brightness(130%);
   position: absolute;
   z-index: -999;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -199,36 +200,45 @@ a {
 
 }
 
-.skills {
-  height: 75%;
-  width: 75%;
-  margin-top: 90px;
-  /* top: 999; */
-  animation: slideIn 2s ease-in-out ;
-}
 
 .skillsdiv {
+  font-family: "Special Elite", system-ui;
   width: 100%;
+  height: 50rem;
+  margin-top: -120px;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 50px;
-  margin-top: -120px;
+  background-size: 200% 200%;
+
+  /* top: 50px; */
   /* filter: blur(1px); */
   /* background: linear-gradient(299.7deg, rgb(48, 91, 255), rgb(100, 100, 255), rgb(153, 125, 255), rgb(200, 150, 255)); */
-  background-size: 200% 200%;
   /* animation: gradient 5s ease-in-out infinite; */
-  background: radial-gradient(circle at left, rgba(48, 91, 255, 0.5), rgba(140, 114, 231, 0.5));
+  background: radial-gradient(circle at left, rgba(48, 91, 255, 0.5), rgba(140, 114, 231, 0.5) 50%, rgba(200, 150, 255, 0.5) 100%);
   animation: move 5s ease-in-out infinite;
 }
 
-.skillsdiv p {
-  font-size: 3em;
-  font-weight: bold;
-  text-transform: uppercase;
+.skillstxt {
+  font-family: "Fira Code", monospace;
   color: rgb(250, 235, 215);
-  text-shadow: 4px 4px 4px rgb(56, 93, 255);
-  font-family: press start;
+  font-size: 1.5rem;
+  display: inline-block;
+  text-align: jsutify; 
+  width: 80%;
+  margin-top: -350px;
+  top: 50px;
+  backdrop-filter: blur(10px);
+  font-weight: bolder;
+  /* justify-content: center;
+  align-items: center; */
+  /* margin-top: 300px; */
+  /* padding-top: 90px; */
+  /* padding-left: 100px; */
+  /* text-shadow: 4px 4px 4px rgb(56, 93, 255); */
+  /* border: #a3a3e5 2px solid;
+  border-radius: 100px; */
+
 }
 
 .custom-shape-divider-top-1701866260 {
