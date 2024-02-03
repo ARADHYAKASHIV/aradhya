@@ -398,6 +398,16 @@ a {
   }
 }
 
+@keyframes fadeOut {
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
