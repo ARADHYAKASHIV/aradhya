@@ -1,3 +1,6 @@
+
+// Typing Animation text scramble
+
 class TextScramble {
     constructor(el) {
       this.el = el;
@@ -80,3 +83,24 @@ class TextScramble {
   };
 
   next();
+
+  // Typing Animation text scramble ends here
+
+// ************************************************************************************************************
+
+  // bounce animationin inside the skills section
+
+  window.onload = function() {
+    const balls = document.querySelectorAll('.blur-ball, .blur-ball2');
+    balls.forEach((ball, i) => {
+      ball.style.animationDuration = Math.floor(Math.random() * 5 + 5) + 's';
+      ball.style.animationDelay = Math.floor(Math.random() * 5) + 's';
+      if (i % 2 === 0) {
+        ball.style.animationDirection = 'normal';
+      } else {
+        ball.style.animationDirection = 'reverse';
+      }
+    });
+  };
+
+  // bounce animationin inside the skills section ends here
